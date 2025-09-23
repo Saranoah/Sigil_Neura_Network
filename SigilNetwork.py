@@ -1,4 +1,5 @@
 Main neural network with VWPR optimization
+"""Kintsugi-inspired neural network with Value-Weighted Pathway Reinforcement"""
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
