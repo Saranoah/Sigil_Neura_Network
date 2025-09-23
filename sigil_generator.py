@@ -1,3 +1,4 @@
+ """Generates Kintsugi sigils based on layer metrics and archetypes"""
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
