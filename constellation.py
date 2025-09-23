@@ -70,7 +70,7 @@ def sigil_constellation_map(layer_infos, out_path="sigil_constellation.png", fig
     plt.savefig(out_path, dpi=150, bbox_inches="tight", facecolor="black")
     plt.close(fig)
 
-# Example usage:
+# Example usage: 
 if __name__ == "__main__":
     # Example layer_infos, replace with real layer names, archetypes, sigil image paths
     layer_infos = [
