@@ -5,8 +5,6 @@
 
 Welcome to the **Sigil Gallery**:  
 Here, you will witness the visual and ceremonial evolution of your Kintsugi-optimized model.  
-This README is your atlas of archetypes, metrics, and mythic motifs—serving engineers, sovereign clients, and cosmic learners alike.
-
 ---
 
 ## 🌌 What is a Sigil?
