@@ -155,7 +155,7 @@ pip install sigil-network
 ### From Source
 ```bash
 git clone https://github.com/Saranoah/Sigil_Neura_Network.git
-cd Sigil_Neura_Network
+cd Sigil_Neural_Network
 pip install -e .
 ```
 
