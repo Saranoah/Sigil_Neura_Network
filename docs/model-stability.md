@@ -1,113 +1,91 @@
-```mermaid
-flowchart LR
-  style LOOP fill:#111111,stroke:#FFD700,stroke-width:2px,color:#ffffff
+# 🏯 Kintsugi Optimization – Stability Framework
+> *"The gilded network does not just survive its fractures — it thrives because of them."*
 
-  A[🔴 High Error<br/>l_i] --> B[🟡 High φ<br/>increase φ_i]
-  B --> C[🟢 Amplified Learning Signal<br/>Δθ ∝ φ]
-  C --> D[🔵 Runaway Risk<br/>(overfit / instability)]
-  D -->|feedback| A
+The **core instability** of Kintsugi Optimization comes from a **positive feedback loop**:
 
-  classDef danger fill:#8b0000,stroke:#ffb3b3,color:#fff;
-  classDef amplify fill:#ffda79,stroke:#8b6b00,color:#000;
-  classDef stable fill:#a8ffb0,stroke:#2d7a00,color:#000;
-  classDef risk fill:#7fb3ff,stroke:#274e7a,color:#000;
+> ⚡ **High Error → High `ϕ` → Amplified Learning Signal → Even Higher Error**
 
-  class A danger;
-  class B amplify;
-  class C stable;
-  class D risk;
+This loop is both the **engine of innovation** and the **source of danger**.  
+Below, we outline the **risks**, **solutions**, and the **stabilized algorithm**.
 
 ---
 
-### 2) Stabilization shields (Mermaid radial-ish layout)
-This shows the four stabilization mechanisms as shields surrounding the loop:
-
-```markdown
-```mermaid
-flowchart TB
-  subgraph Stabilizers [🛡️ Stabilization Mechanisms]
-    direction LR
-    S1["🛡️ Regularization<br/>(clip, L1/L2)"]
-    S2["🔁 Experience Replay<br/>(buffer + mixing)"]
-    S3["⏱️ Persistence Filtering<br/>(E[l_i] moving avg)"]
-    S4["⚖️ Normalization<br/>(layer-wise φ budget)"]
-  end
-
-  S1 -.-> A
-  S2 -.-> A
-  S3 -.-> A
-  S4 -.-> A
-
-  classDef shield fill:#0f766e,stroke:#14b8a6,color:#fff;
-  class S1,S2,S3,S4 shield;
+## ⚠️ **Core Instability at a Glance**
+| 🔗 Step | Description |
+|----------|-------------|
+| **High Error** | A rare event or anomaly causes extreme local loss `l_i`. |
+| **High `ϕ`** | The system responds by increasing the gilding weight `ϕ`. |
+| **Amplified Learning Signal** | Sculptor weights `θ` get boosted updates proportional to `ϕ`. |
+| **Runaway Risk** | Without checks, the model spirals into chaos or catastrophic overfitting. |
 
 ---
 
-### 3) Combined layout (loop + shields + key equations)
-If you prefer a single combined block (loop + equations below), use this:
+<details>
+<summary>🟥 <strong>1. Runaway Reinforcement & Catastrophic Forgetting</strong></summary>
 
-```markdown
-```mermaid
-flowchart LR
-  A[🔴 High Error<br/>l_i] --> B[🟡 Increase φ<br/>Δφ_i ∝ E[l_i]]
-  B --> C[🟢 Amplified Learning Signal<br/>Δθ ∝ φ]
-  C --> D[🔵 Runaway Risk]
-  D -->|feedback| A
-
-  subgraph Shields [🛡️ Stabilizers]
-    direction LR
-    R1["Regularization (clip, L1/L2)"]
-    R2["Experience Replay (buffer)"]
-    R3["Persistence Filtering (E[l_i])"]
-    R4["Normalization (layer budget)"]
-  end
-
-  R1 -.-> B
-  R2 -.-> A
-  R3 -.-> B
-  R4 -.-> B
-
-  classDef eq fill:#f3f4f6,stroke:#9ca3af,color:#111,stroke-width:1px;
-  subgraph Equations [Key Equations]
-    direction TB
-    E1["Gilder: Δφ_i = β * (E[l_i] - λ * φ_i)"]
-    E2["Sculptor: Δθ_i = -α * ∇_{θ_i} (L_transformed + Ω(θ))"]
-  end
-  class E1,E2 eq;
+### ⚔️ The Risk
+A pathway becomes **over-gilded** (`ϕ` extremely high) for a **valid rare event**.  
+The amplified learning signal (`Δθ ∝ ϕ`) causes **drastic updates** to weights (`θ`), leading to:
+- **Catastrophic overfitting** to that single rare event.
+- Forgetting everything else — the network becomes a **one-trick pony**.
 
 ---
 
-### 4) How to add to your Markdown file
-Open `docs/STABILITY_FRAMEWORK.md` (or your README section) and paste either of the code blocks above into the file. Example placement:
-
-```markdown
-## Core instability
-
-(Short intro text...)
-
-<!-- insert diagram -->
-```mermaid
-... (paste one of the diagram blocks here) ...
-
-> **Note:** keep the triple backticks exactly as shown. The first line must be ```mermaid.
-
----
-
-### 5) Previewing Mermaid
-- **On GitHub**: GitHub supports Mermaid in `.md` files; the diagram will render in PRs and the repo UI.
-- **Locally**:
-  - Use **VS Code** + *Markdown Preview Enhanced* or *Mermaid Preview* extension.
-  - Or use `npx @mermaid-js/mermaid-cli` to render to PNG/SVG:
-    ```bash
-    npx @mermaid-js/mermaid-cli -i docs/STABILITY_FRAMEWORK.md -o docs/diagrams/kintsugi_loop.svg
+### 🛡️ The Solution
+- **Value Weight Clipping / Normalization**  
+  - Cap `ϕ` within a safe range:
     ```
+    ϕ_i ∈ [1, ϕ_max]
+    ```
+  - Or normalize `ϕ` per layer so the **total value remains constant**, forcing the network to **budget its value**.
+
+- **Experience Replay**  
+  Maintain a **buffer of past "normal" examples**.  
+  Mix these with rare events during training to **integrate new knowledge** without destroying old patterns.  
+  > Think of it like the **immune system** protecting the body while learning new threats.
+
+</details>
 
 ---
 
-### 6) Commit steps (quick)
-From your repo root:
+<details>
+<summary>🟨 <strong>2. Amplification of Noise</strong></summary>
 
-```bash
-git add docs/STABILITY_FRAMEWORK.md
-git commit -m "Add Mermaid diagrams for stability framework"
-git push origin <your-branch>
+### ⚔️ The Risk
+Not every high error is meaningful — some are **random noise or outliers**.  
+If unchecked, the algorithm **gilds meaningless pathways**, wasting resources and amplifying chaos.
+
+---
+
+### 🛡️ The Solution
+- **Persistence Filtering**  
+  Only **gild pathways** that consistently show **high error** over time.  
+  Use a **moving average** of loss `l_i` instead of single-step spikes.
+
+- **Cross-Example Validation**  
+  Before increasing `ϕ`:
+  1. Perform a **small update to `θ`**.
+  2. Check if this reduces error on a **mini validation set**.
+  - ✅ If yes → Real signal, **gild it**.  
+  - ❌ If no → Likely noise, **ignore it**.
+
+</details>
+
+---
+
+<details>
+<summary>🟦 <strong>3. Redefining Convergence</strong></summary>
+
+### ⚔️ The Risk
+Standard gradient descent converges when **loss stops decreasing**.  
+But Kintsugi Optimization **maximizes value-weighted loss**,  
+so it **could grow forever**, creating pathological states.
+
+---
+
+### 🛡️ The Solution
+- **New Convergence Metric:**  
+  Convergence = **stabilization of the `ϕ` distribution**,  
+  not a fixed loss value.
+
+- **Learning Rate Hierarchy:**  
