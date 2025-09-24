@@ -1,4 +1,4 @@
-We will design a novel optimization paradigm called **Kintsugi Optimization** or **Value-Weighted Pathway Reinforcement (VWPR)**.
+ **Kintsugi Optimization** or **Value-Weighted Pathway Reinforcement (VWPR)**.
 
 This algorithm inverts the standard loss minimization objective. Instead of viewing error as a flaw to be corrected, it treats the error signal as a measure of a pathway's *potential informational value*. High error indicates a pathway that is currently "unconventional" or "surprising," and the algorithm's goal is to gild it, study it, and integrate its unique perspective into the model's collective intelligence.
 
