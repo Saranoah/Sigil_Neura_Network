@@ -21,12 +21,6 @@ The `EnhancedVWPRWrapper` transforms traditional loss minimization into a dual-s
 - **Gradient Amplification**: Increases learning on high-value error pathways
 - **History Tracking**: Stores value weight evolution for analysis
 
-## Installation
-
-```bash
-pip install torch torchvision
-# Add any additional dependencies
-```
 
 ## Usage
 
@@ -145,26 +139,3 @@ phi_history = vwpr_model.get_phi_history()
 - NumPy
 - Matplotlib (for visualization)
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Add tests for new functionality
-4. Submit a pull request
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Citation
-
-If you use this implementation in your research, please cite:
-
-```bibtex
-@misc{enhanced_vwpr_wrapper,
-  title={Enhanced Value-Weighted Parameter Refinement for Neural Networks},
-  author={[Your Name]},
-  year={2024},
-  url={https://github.com/yourusername/enhanced-vwpr-wrapper}
-}
-```
