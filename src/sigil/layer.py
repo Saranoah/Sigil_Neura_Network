@@ -120,3 +120,5 @@ class SigilLayer(nn.Module):
     def get_phi(self):
         return self.phi
 
+# Copyright (c) 2024 Israa Ali
+# Licensed under the MIT License
