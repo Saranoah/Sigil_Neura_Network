@@ -172,3 +172,5 @@ class SigilNetworkManager:
                 })
         return metrics
 
+# Copyright (c) 2024 Israa Ali
+# Licensed under the MIT License
