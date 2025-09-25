@@ -98,3 +98,5 @@ if __name__ == "__main__":
     ]
     sigil_constellation_map(layer_infos)
 
+# Copyright (c) 2024 Israa Ali
+# Licensed under the MIT License
