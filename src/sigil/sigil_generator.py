@@ -66,3 +66,6 @@ def alchemist_sigil(mean_phi, variance, epochs, svg_path=None):
         # Central rune
         dwg.add(dwg.circle(center=(200,200), r=18, fill="lime"))
         dwg.save()
+
+# Copyright (c) 2024 Israa Ali
+# Licensed under the MIT License
