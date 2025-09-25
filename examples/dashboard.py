@@ -154,3 +154,7 @@ def display_node_info(clickData):
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
+
+# Copyright (c) 2024 Israa Ali
+# Licensed under the MIT License
