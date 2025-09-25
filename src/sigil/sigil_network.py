@@ -234,3 +234,6 @@ class EnhancedVWPRWrapper:
             plt.close(fig)
         except Exception as e:
             print(f"Could not create summary visualization: {e}")
+
+# Copyright (c) 2024 Israa Ali
+# Licensed under the MIT License
