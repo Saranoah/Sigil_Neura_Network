@@ -34,3 +34,7 @@ for epoch in range(5):
 
     # manager records snapshot if you want
     manager.record_epoch()
+
+
+# Copyright (c) 2024 Israa Ali
+# Licensed under the MIT License
