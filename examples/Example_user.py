@@ -21,3 +21,6 @@ for epoch in range(50):
 
 # Optionally, print summary metrics for README or dashboard
 print(manager.summary_metrics())
+
+# Copyright (c) 2024 Israa Ali
+# Licensed under the MIT License
