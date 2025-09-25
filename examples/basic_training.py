@@ -35,3 +35,5 @@ for epoch in range(50):
 print("Final Network Metrics:")
 print(manager.summary_metrics())
 
+# Copyright (c) 2024 Israa Ali
+# Licensed under the MIT License
