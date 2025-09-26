@@ -216,6 +216,12 @@ black
 flake8
 ipykernel
 
+## Project Structure
+
+The project follows a modular and scalable layout:
+
+```text
+# Paste the above tree here!
 
 Sigil_Neural_Network/
 │
