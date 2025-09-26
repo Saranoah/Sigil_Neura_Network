@@ -145,35 +145,61 @@ For detailed mathematical formulation, see [docs/ALGORITHM.md](docs/ALGORITHM.md
 - **[API Reference](docs/API.md)**: Complete class and method documentation
 - **[Examples](examples/)**: Jupyter notebooks with detailed usage scenarios
 
+```
 ## Installation
 
-### From PyPI (Recommended)
+### 1. From PyPI (Recommended)
+The easiest way to install:
 ```bash
 pip install sigil-network
+
+
 ```
 
 ### From Source
 ```bash
-## Installation
-
-Clone the repository and install dependencies:
-
-```bash
+# Clone the repository
 git clone https://github.com/Saranoah/Sigil_Neural_Network.git
 cd Sigil_Neural_Network
+
+# Create and activate a virtual environment
 python -m venv .venv
-.\.venv\Scripts\activate
+.\.venv\Scripts\activate  # Windows
+# source .venv/bin/activate  # macOS/Linux
+
+# Install dependencies
 pip install -r requirements.txt
+Note (Windows Users)
+If you get a "running scripts is disabled" error when activating the environment, run this once in PowerShell as Administrator:
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+Verify Installation
+
+Run the tests to ensure everything is working correctly:
+pytest tests/ -v
+
+Expected output:
+collected 1 item
+tests/test_update_phi.py::test_phi_update PASSED
+
 
 ```
 
 ### Requirements
-- Python 3.8+
-- PyTorch 1.9+
-- NumPy 1.21+
-- Matplotlib 3.5+
-- NetworkX 2.6+
-- SciPy 1.7+
+| Package                                                            | Minimum Version | Purpose                    |
+| ------------------------------------------------------------------ | --------------- | -------------------------- |
+| [Python](https://www.python.org/downloads/)                        | 3.8+            | Core language              |
+| [PyTorch](https://pytorch.org/get-started/locally/)                | 1.9+            | Neural network backend     |
+| [NumPy](https://numpy.org/)                                        | 1.21+           | Math operations            |
+| [SciPy](https://scipy.org/)                                        | 1.7+            | Scientific computations    |
+| [Matplotlib](https://matplotlib.org/stable/users/getting_started/) | 3.5+            | Visualizations             |
+| [NetworkX](https://networkx.org/)                                  | 2.6+            | Graph-based visualizations |
+| [pytest](https://docs.pytest.org/en/stable/)                       | Latest          | Testing                    |
+| [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/)         | Latest          | Test coverage              |
+| [black](https://black.readthedocs.io/en/stable/)                   | Latest          | Code formatting            |
+| [flake8](https://flake8.pycqa.org/en/latest/)                      | Latest          | Linting                    |
+| [ipykernel](https://ipython.readthedocs.io/en/stable/)             | Latest          | Jupyter Notebook support   |
+
 
 ## Contributing
 
@@ -182,6 +208,12 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 - Code style requirements  
 - Testing procedures
 - Pull request process
+
+
+## To install everything at once:
+
+pip install numpy scipy torch matplotlib networkx pytest pytest-cov black flake8 ipykernel
+
 
 ## Citation
 
@@ -208,4 +240,4 @@ Inspired by the Japanese art of Kintsugi, where broken pottery is repaired with 
 
 **Author**: Israa Ali  
 **Email**: israali2019@yahoo.com  
-**Institution**: Johns Hopkins University - Applied Generative AI Certificate Program
+
