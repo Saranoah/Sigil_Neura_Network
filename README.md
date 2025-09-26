@@ -200,6 +200,47 @@ tests/test_update_phi.py::test_phi_update PASSED
 | [flake8](https://flake8.pycqa.org/en/latest/)                      | Latest          | Linting                    |
 | [ipykernel](https://ipython.readthedocs.io/en/stable/)             | Latest          | Jupyter Notebook support   |
 
+##To install everything at once:
+
+pip install numpy scipy torch matplotlib networkx pytest pytest-cov black flake8 ipykernel
+
+
+##Optional Developer Setup
+
+To install extra tools for code quality and notebooks:
+pip install -r requirements-dev.txt
+Where requirements-dev.txt might contain:
+pytest
+pytest-cov
+black
+flake8
+ipykernel
+
+
+##Project Structure
+Sigil_Neural_Network/
+│
+├── src/
+│   └── sigil/
+│       ├── __init__.py
+│       ├── constellation.py
+│       ├── layer.py
+│       ├── manager.py
+│       ├── sigil_generator.py
+│       └── sigil_network.py
+│
+├── tests/
+│   ├── test_layer.py
+│   ├── test_manager.py
+│   └── test_update_phi.py
+│
+├── examples/
+│   └── demo_notebook.ipynb
+│
+├── requirements.txt
+├── requirements-dev.txt
+└── README.md
+
 
 ## Contributing
 
