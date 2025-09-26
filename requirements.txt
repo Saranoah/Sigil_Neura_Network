@@ -1,5 +1,18 @@
-torch>=1.9.0
-numpy>=1.21.0
-matplotlib>=3.5.0
-scipy>=1.7.0
+# Core dependencies
+numpy
+scipy
+torch
+matplotlib
+
+# Testing
+pytest
+pytest-cov
+
+# Code quality
+black
+flake8
+
+# Optional for notebooks
+ipykernel
+
 
