@@ -154,9 +154,17 @@ pip install sigil-network
 
 ### From Source
 ```bash
-git clone https://github.com/Saranoah/Sigil_Neura_Network.git
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/Saranoah/Sigil_Neural_Network.git
 cd Sigil_Neural_Network
-pip install -e .
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+
 ```
 
 ### Requirements
