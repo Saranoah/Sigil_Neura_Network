@@ -217,29 +217,65 @@ flake8
 ipykernel
 
 
-##Project Structure
 Sigil_Neural_Network/
 │
-├── src/
+├── src/                         # Core library code
 │   └── sigil/
 │       ├── __init__.py
-│       ├── constellation.py
-│       ├── layer.py
-│       ├── manager.py
-│       ├── sigil_generator.py
-│       └── sigil_network.py
+│       ├── constellation.py     # Specialized architecture logic
+│       ├── layer.py             # SigilLayer core module
+│       ├── manager.py           # SigilNetworkManager
+│       ├── sigil_generator.py   # Visualization system
+│       └── sigil_network.py     # Network definition and orchestration
 │
-├── tests/
-│   ├── test_layer.py
-│   ├── test_manager.py
-│   └── test_update_phi.py
+├── tests/                       # Organized test suite
+│   ├── __init__.py
+│   ├── core/
+│   │   ├── test_layer.py
+│   │   └── test_manager.py
+│   │
+│   └── visualization/
+│       └── test_visualization.py
 │
 ├── examples/
-│   └── demo_notebook.ipynb
+│   ├── basic_training.py
+│   ├── dashboard.py
+│   ├── Example_user.py
+│   └── test_update_phi.py
 │
-├── requirements.txt
-├── requirements-dev.txt
-└── README.md
+├── results/                     # Generated visualizations, logs, etc.
+│   ├── gallery/
+│   └── logs/
+│
+├── docs/                         # Documentation and guides
+│   ├── API.md
+│   ├── ALGORITHM.md
+│   ├── STABILITY.md
+│   ├── VWPRWrapper.md
+│   ├── Kintsugi-Optimization.md
+│   ├── Kintsugi Optimization2.md
+│   ├── Sigil Gallery README.md
+│   ├── Sigil-Network-practical-Design.md
+│   ├── Mythic Onboarding Guide.md
+│   └── diagrams/
+│       └── architecture.png
+│
+├── .github/                      # GitHub-specific workflows
+│   └── FUNDING.yml
+│
+├── assets/                       # Images or static assets for README/docs
+│   └── .gitkeep
+│
+├── requirements.txt              # Runtime dependencies
+├── requirements-dev.txt          # Developer dependencies
+├── setup.py                       # Package installer
+├── pytest.ini                      # Pytest config
+├── CONTRIBUTING.md
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+└── .gitignore
+
 
 
 ## Contributing
